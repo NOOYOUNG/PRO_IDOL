@@ -71,7 +71,7 @@ public class Character {
 		if(score>80) {
 			grade="S";
 		}
-		else if(score>50) {
+		else if(score>60) {
 			grade="A";
 		}
 		else if(score>40) {

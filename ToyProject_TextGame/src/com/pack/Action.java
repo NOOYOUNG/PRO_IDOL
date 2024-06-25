@@ -31,21 +31,23 @@ public class Action {
 	
 	void successPerformace() {
 		System.out.println("무대를 성공적으로 마쳤습니다!");
-		System.out.println("노래와 춤과 랩의 능력치가 10씩 증가합니다. 매력도가 10 상승합니다. 100명의 팬이 생겼습니다.");
+		System.out.println("모든 능력치가 10씩 상승합니다. 200명의 팬이 생겼습니다.");
 		c.sing+=10;
 		c.dance+=10;
 		c.attractive+=10;
 		c.rap+=10;
-		c.fan+=100;
+		c.physical+=5;
+		c.fan+=200;
 	}
 	
 	void failPerformance() {
 		System.out.println("무대에서 실수를 저질렀습니다...");
-		System.out.println("노래와 춤과 랩의 능력치가 1씩 감소합니다. 매력도가 1 감소합니다.");
-		c.sing--;
-		c.dance--;
-		c.rap--;
-		c.attractive--;
+		System.out.println("모든 능력치가 5씩 감소합니다. 50명의 팬이 당신에게서 등을 돌립니다..");
+		c.sing-=5;
+		c.dance-=5;
+		c.rap-=5;
+		c.attractive-=5;
+		c.fan-=50;
 	}
 	
 	void fightMembers() {

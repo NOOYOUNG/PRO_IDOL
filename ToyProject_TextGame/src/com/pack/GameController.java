@@ -19,6 +19,9 @@ public class GameController {
 		System.out.println("~~~게임을 시작합니다!~~~");
 		System.out.print("플레이어의 이름을 입력하세요:");
 		ch.name=s.nextLine();
+		System.out.println("당신의 성별은 무엇입니까?");
+		System.out.println("1. 여자\t\t2. 남자");
+		int gender=s.nextInt();
 		
 		System.out.println(ch.name+", 당신은 데뷔를 직전에 둔 연습생입니다.");
 		System.out.println("회사의 연습생을 담당하는 실장님이 당신을 호출했습니다.");
@@ -26,7 +29,10 @@ public class GameController {
 		
 		System.out.println("\""+ch.name+", 너는 이번 데뷔조에 합류하지 못하게 됐어.\"");
 		System.out.println("\"그래서 말인데... 너에게 기회를 한 번 더 주려고 해.\"");
-		System.out.println("\"이번에 JAVANET에서 열리는 신인 남자 아이돌 그룹 데뷔 프로그램에 나가보는게 어떄?\"");
+		if(gender==1)
+			System.out.println("\"이번에 JAVANET에서 열리는 신인 여자 아이돌 그룹 데뷔 프로그램에 나가보는게 어떄?\"");
+		else if(gender==2)
+			System.out.println("\"이번에 JAVANET에서 열리는 신인 남자 아이돌 그룹 데뷔 프로그램에 나가보는게 어떄?\"");
 		
 		while(true) {
 			System.out.println("1. 예\t\t2. 아니오");
@@ -54,7 +60,7 @@ public class GameController {
 		System.out.println("게임이 진행되며 선택지를 고름에 따라 능력치가 높아지거나 낮아질 수 있습니다.");
 		
 		try {
-		    Thread.sleep(3000);
+		    Thread.sleep(2000);
 		} catch (InterruptedException e) {
 		    e.printStackTrace();
 		}
@@ -80,8 +86,8 @@ public class GameController {
 			answer2=s.nextInt();
 			if(answer2==1) {
 				action.practiceSing();
-				System.out.println("축하합니다! 20명의 팬이 당신에게 관심을 가집니다");
-				ch.fan+=20;
+				System.out.println("축하합니다! 50명의 팬이 당신에게 관심을 가집니다");
+				ch.fan+=50;
 			} else if(answer2==2) {
 				System.out.println("당신은 아무 노력도 하지 않았습니다.");
 				System.out.println("당신의 영상에 관심을 가지는 팬이 없습니다.");
@@ -96,8 +102,8 @@ public class GameController {
 			answer2=s.nextInt();
 			if(answer2==1) {
 				action.practiceDance();
-				System.out.println("축하합니다! 20명의 팬이 당신에게 관심을 가집니다");
-				ch.fan+=20;
+				System.out.println("축하합니다! 50명의 팬이 당신에게 관심을 가집니다");
+				ch.fan+=50;
 			} else if(answer2==2) {
 				System.out.println("당신은 아무 노력도 하지 않았습니다.");
 				System.out.println("당신의 영상에 관심을 가지는 팬이 없습니다.");
@@ -112,8 +118,8 @@ public class GameController {
 			answer2=s.nextInt();
 			if(answer2==1) {
 				action.practiceRap();
-				System.out.println("축하합니다! 20명의 팬이 당신에게 관심을 가집니다");
-				ch.fan+=20;
+				System.out.println("축하합니다! 50명의 팬이 당신에게 관심을 가집니다");
+				ch.fan+=50;
 			} else if(answer2==2) {
 				System.out.println("당신은 아무 노력도 하지 않았습니다.");
 				System.out.println("당신의 영상에 관심을 가지는 팬이 없습니다.");
@@ -125,16 +131,16 @@ public class GameController {
 			System.out.println("당신은 애교를 선택했습니다.");
 			System.out.println("이럴수가... 당신의 애교에 현장마저 썰렁해집니다.");
 			System.out.println("하지만 이번 도전을 통해 매력도가 1 증가했습니다.");
-			System.out.println("놀랍게도 당신에게 관심을 가지는 10명의 팬이 생겼습니다.");
+			System.out.println("놀랍게도 당신에게 관심을 가지는 30명의 팬이 생겼습니다.");
 			ch.attractive++;
-			ch.fan+=10;
+			ch.fan+=30;
 		}
 		
 		System.out.println();
 		ch.info();
 		
 		try {
-		    Thread.sleep(3000);
+		    Thread.sleep(2000);
 		} catch (InterruptedException e) {
 		    e.printStackTrace();
 		}
@@ -149,7 +155,7 @@ public class GameController {
 		System.out.println("서바이벌 프로그램의 꽃! 센터 선발전입니다.");
 		System.out.println("선발전이 시작되기 전까지는 3일이 남았습니다.");
 		System.out.println("당신은 얼마나 연습을 하시겠습니까?");
-		System.out.println("1. 매일 연습한다.\t\t\2. 이틀만 연습한다.\t\t3. 하루만 연습한다.\t\t4. 연습하지 않는다.");
+		System.out.println("1. 매일 연습한다.\t\t2. 이틀만 연습한다.\t\t3. 하루만 연습한다.\t\t4. 연습하지 않는다.");
 		answer=s.nextInt();
 		
 		if(answer==1) {
@@ -181,7 +187,7 @@ public class GameController {
 		}
 		
 		try {
-		    Thread.sleep(1500);
+		    Thread.sleep(1000);
 		} catch (InterruptedException e) {
 		    e.printStackTrace();
 		}
@@ -206,7 +212,7 @@ public class GameController {
 		ch.info();
 		
 		try {
-		    Thread.sleep(3000);
+		    Thread.sleep(2000);
 		} catch (InterruptedException e) {
 		    e.printStackTrace();
 		}
@@ -259,7 +265,7 @@ public class GameController {
 		}
 		
 		try {
-		    Thread.sleep(1500);
+		    Thread.sleep(1000);
 		} catch (InterruptedException e) {
 		    e.printStackTrace();
 		}
@@ -306,7 +312,7 @@ public class GameController {
 		ch.info();
 		
 		try {
-		    Thread.sleep(3000);
+		    Thread.sleep(2000);
 		} catch (InterruptedException e) {
 		    e.printStackTrace();
 		}
@@ -368,7 +374,7 @@ public class GameController {
 		}
 		
 		try {
-		    Thread.sleep(1500);
+		    Thread.sleep(1000);
 		} catch (InterruptedException e) {
 		    e.printStackTrace();
 		}
@@ -415,7 +421,7 @@ public class GameController {
 		ch.info();
 		
 		try {
-		    Thread.sleep(3000);
+		    Thread.sleep(2000);
 		} catch (InterruptedException e) {
 		    e.printStackTrace();
 		}
@@ -442,7 +448,7 @@ public class GameController {
 		days=s.nextInt();
 		
 		try {
-		    Thread.sleep(1000);
+		    Thread.sleep(100);
 		} catch (InterruptedException e) {
 		    e.printStackTrace();
 		}
@@ -456,7 +462,7 @@ public class GameController {
 		if(ch.reputation<0) {
 			System.out.println("당신이 연습하던 "+pdays+"일째, 무언가 소란스럽습니다.");
 			System.out.println("제작진이 당신을 부릅니다.");
-			System.out.println("\""+ch.name+"\", 앉으세요\"");
+			System.out.println("\""+ch.name+", 앉으세요\"");
 			System.out.println("자리에 앉은 당신의 앞으로 제작진이 핸드폰을 내밉니다.");
 			System.out.println("당신은 핸드폰을 들어 동영상을 재생시킵니다.");
 			System.out.println("2차 평가 때, 팀원에게 욕설을 뱉는 당신의 음성이 담겨 있습니다.");
@@ -479,7 +485,7 @@ public class GameController {
 		}
 		
 		try {
-		    Thread.sleep(1000);
+		    Thread.sleep(500);
 		} catch (InterruptedException e) {
 		    e.printStackTrace();
 		}
@@ -493,7 +499,7 @@ public class GameController {
 		ch.physical+=days;
 		
 		try {
-		    Thread.sleep(1000);
+		    Thread.sleep(500);
 		} catch (InterruptedException e) {
 		    e.printStackTrace();
 		}
@@ -516,7 +522,7 @@ public class GameController {
 		ch.info();
 		
 		try {
-		    Thread.sleep(3000);
+		    Thread.sleep(2000);
 		} catch (InterruptedException e) {
 		    e.printStackTrace();
 		}
@@ -549,7 +555,7 @@ public class GameController {
 		ch.physical+=days;
 		
 		try {
-		    Thread.sleep(1500);
+		    Thread.sleep(1000);
 		} catch (InterruptedException e) {
 		    e.printStackTrace();
 		}
@@ -569,10 +575,9 @@ public class GameController {
 		}
 		
 		System.out.println();
-		ch.info();
 		
 		try {
-		    Thread.sleep(3000);
+		    Thread.sleep(2000);
 		} catch (InterruptedException e) {
 		    e.printStackTrace();
 		}
@@ -582,7 +587,19 @@ public class GameController {
 	}
 	
 	void debutNotDebut() {
-		
+		if((ch.rap>60 && ch.sing>60 && ch.dance>=100) || (ch.rap>60 && ch.sing>=100 && ch.dance>60) || (ch.rap>=100 && ch.sing>60 && ch.dance>60) && ch.fan>1000) {
+			System.out.println("축하합니다! 당신은 1등으로 데뷔에 성공했습니다.");
+			System.out.println("<칭호: 궁극의 아이돌>");
+			ch.info();
+		}
+		else if((ch.rap>60 || ch.sing>60 || ch.dance>60) && ch.fan>1000) {
+			System.out.println("축하합니다! 순위권 안에 들어 데뷔에 성공했습니다.");
+			ch.info();
+		}
+		else {
+			System.out.println("당신은 데뷔하지 못했습니다...");
+			ch.info();
+		}
 	}
 	
 }
